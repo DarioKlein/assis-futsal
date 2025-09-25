@@ -1,5 +1,39 @@
+:root {
+  --cor-primaria: rgb(30, 75, 130);
+  --cor-secundaria: rgb(15, 145, 215);
+  --cor-terciaria: rgb(200, 160, 0);
+  --cor-quartenaria: rgb(70, 160, 50);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+textarea,
+select {
+  all: unset;
+}
+
+button {
+  cursor: pointer;
 }
