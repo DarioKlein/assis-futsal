@@ -1,0 +1,229 @@
+@import url("../../css/global.css");
+
+.navbar-container {
+  display: flex;
+  font-size: 1.2rem;
+  max-height: 8.5rem;
+  min-width: 100vw;
+  font-weight: bold;
+  overflow: hidden;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+}
+
+.navbar-spacing {
+  position: relative;
+  height: 3rem;
+  min-width: 40vw;
+  background-color: var(--cor-primaria);
+}
+
+.rotated-spacing:nth-of-type(1) {
+  height: 45vw;
+  width: 10rem;
+  background-color: var(--cor-primaria);
+  transform: translateX(-1.75rem) rotate(20deg);
+}
+
+.rotated-spacing:nth-of-type(2) {
+  height: 45vw;
+  width: 10rem;
+  background-color: var(--cor-primaria);
+  transform: translateX(1.75rem) rotate(-20deg);
+}
+
+.navigation-section {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(225, 225, 225);
+}
+
+ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-right: 3.5rem;
+  gap: 1rem;
+  flex-grow: 1;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20vw;
+}
+
+.logo > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.slogan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 3.5rem;
+  text-align: center;
+  color: var(--cor-secundaria);
+  flex-grow: 1;
+}
+
+.slogan > p > span {
+  color: var(--cor-primaria);
+}
+
+.mobile-navbar {
+  display: none;
+}
+
+ul > li > a {
+  position: relative;
+  transition: all 300ms ease-in-out;
+}
+
+ul > li > a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 0;
+  height: 0.25rem;
+  border-radius: 1rem;
+  top: 1.75rem;
+  background-color: var(--cor-secundaria);
+  transition: all 300ms ease-in-out;
+}
+
+ul > li > a:hover::after {
+  left: 0;
+  width: 100%;
+}
+
+ul > li > a:hover {
+  color: var(--cor-terciaria);
+}
+
+@media (max-width: 768px) {
+  .desktop-navbar {
+    display: none;
+  }
+
+  .mobile-navbar {
+    display: flex;
+    max-height: 6.5rem;
+    min-width: 100vw;
+    position: fixed;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1),
+      0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+  }
+
+  .navbar-container {
+    justify-content: space-between;
+    align-items: center;
+    min-width: 100%;
+    height: auto;
+    padding: 1rem;
+    background-color: var(--cor-primaria);
+    color: rgb(255, 255, 255);
+  }
+
+  .logo {
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: unset;
+    width: auto;
+  }
+
+  .logo > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .logo > h1 {
+    font-size: large;
+    white-space: nowrap;
+  }
+
+  .hamburguer-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 1rem;
+    background-color: var(--cor-secundaria);
+    top: 0.5rem;
+    right: 1rem;
+    padding: 0.5rem;
+  }
+
+  .hamburguer-menu > .hamburguer-menu-item {
+    width: 100%;
+    border-radius: 1rem;
+    background-color: rgb(255, 255, 255);
+    border: 0.25rem solid rgb(255, 255, 255);
+    transition: all 300ms ease-in-out;
+  }
+
+  .rotate-child-one {
+    width: 55% !important;
+    transform: translateY(1.365rem) rotate(45deg);
+  }
+
+  .hide-child-two {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  .rotate-child-three {
+    width: 55% !important;
+    transform: translateY(-1.25rem) rotate(-45deg);
+  }
+
+  .menu {
+    max-width: 50vw;
+    height: calc(100vh - 6.5rem);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem;
+    top: 6.5rem;
+    right: 0;
+    background-color: var(--cor-primaria);
+    z-index: 2;
+    overflow: auto;
+    gap: 1rem;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: all 400ms ease-in-out;
+  }
+
+  .visible-menu {
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .menu > ul {
+    margin: 0;
+    flex-direction: column;
+    font-size: larger;
+  }
+
+  ul > li > a {
+    color: rgb(255, 255, 255);
+    transition: all 300ms ease-in-out;
+  }
+
+  .menu > .slogan {
+    margin: 0;
+    flex-grow: 0;
+  }
+
+  .menu > .slogan > p > span {
+    color: rgb(255, 255, 255);
+  }
+}
