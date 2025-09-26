@@ -1,8 +1,8 @@
 :root {
-  --cor-primaria: rgb(30, 75, 130);
-  --cor-secundaria: rgb(15, 145, 215);
-  --cor-terciaria: rgb(200, 160, 0);
-  --cor-quartenaria: rgb(70, 160, 50);
+  --cor-primaria: #1c4c83;
+  --cor-secundaria: #1092d7;
+  --cor-terciaria: #f0d067;
+  --cor-quartenaria: #479f34;
 }
 
 * {
@@ -16,7 +16,7 @@ html {
 }
 
 body {
-  font-family: "DM Sans", sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 a {
