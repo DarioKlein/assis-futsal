@@ -28,7 +28,6 @@
 }
 
 .img-container {
-  flex: 1 1 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -165,7 +164,7 @@
 }
 
 .card-img {
-  flex: 1 1 0;
+  flex: 0 1 0;
   width: 10rem;
   height: 10rem;
   border-radius: 1rem;
@@ -223,5 +222,9 @@
 @media (max-width: 768px) {
   .main-content {
     padding-top: 6.5rem;
+  }
+
+  .img-container > img {
+    display: none;
   }
 }
