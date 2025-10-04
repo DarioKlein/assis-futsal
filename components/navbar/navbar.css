@@ -215,6 +215,7 @@ ul > li > a:hover {
     position: fixed;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1),
       0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+    z-index: 10;
   }
 
   .navbar-container {
@@ -222,7 +223,7 @@ ul > li > a:hover {
     align-items: center;
     min-width: 100%;
     height: auto;
-    padding: 1rem;
+    padding: 1rem 3rem;
     background-color: var(--cor-primaria);
     color: rgb(255, 255, 255);
   }
@@ -253,6 +254,7 @@ ul > li > a:hover {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    cursor: pointer;
     width: 5rem;
     height: 5rem;
     border-radius: 1rem;
@@ -260,6 +262,7 @@ ul > li > a:hover {
     top: 0.5rem;
     right: 1rem;
     padding: 1rem;
+    z-index: 5;
   }
 
   .hamburguer-menu > .hamburguer-menu-item {
@@ -286,11 +289,11 @@ ul > li > a:hover {
 
   .menu {
     max-width: 50vw;
-    height: calc(100vh - 6.5rem);
+    height: 100vh;
     position: absolute;
     display: flex;
     flex-direction: column;
-    top: 6.5rem;
+    top: 0;
     right: 0;
     background-color: var(--cor-primaria);
     z-index: 2;
@@ -299,6 +302,29 @@ ul > li > a:hover {
     visibility: hidden;
     transform: translateX(100%);
     transition: all 400ms ease-in-out;
+  }
+
+  .opacity {
+    width: 0;
+    height: 0;
+    transition: background-color 0.5s ease-in-out;
+    background-color: transparent;
+  }
+
+  .opacity-active {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.55);
+  }
+
+  .menu > .logo {
+    max-height: 15rem;
+  }
+
+  .menu > .logo > img {
+    max-width: 100%;
+    max-height: 100%;
   }
 
   .visible-menu {
@@ -312,13 +338,10 @@ ul > li > a:hover {
 
   .menu > ul {
     margin: 0;
+    gap: 0;
     flex-direction: column;
     font-size: larger;
-  }
-
-  ul {
-    gap: 0;
-    justify-content: start;
+    justify-content: flex-start;
   }
 
   ul > li > a {
@@ -331,13 +354,13 @@ ul > li > a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 0.01rem solid #fff;
+    border-top: 0.01rem solid rgba(255, 255, 255, 0.25);
     padding-left: 15rem;
     font-weight: 400;
   }
 
   ul > li:last-child > a {
-    border-bottom: 0.01rem solid #fff;
+    border-bottom: 0.01rem solid rgba(255, 255, 255, 0.25);
   }
 
   ul > li > a::after {
