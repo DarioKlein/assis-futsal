@@ -5,8 +5,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 3rem 8rem;
-  height: 80vh;
+  padding: 5rem 8rem;
+  padding-top: 10rem;
   flex-wrap: wrap;
 }
 
@@ -51,7 +51,6 @@
 }
 
 .description {
-  flex: 0 1 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -82,6 +81,8 @@
 .description-img-container {
   width: 24vw;
   height: 25vh;
+  min-height: 20rem;
+  max-height: 25rem;
   border-radius: 1rem;
   position: relative;
 }
@@ -91,7 +92,7 @@
   flex-direction: column;
   justify-content: center;
   position: absolute;
-  padding: 3rem;
+  padding: 3rem 3.5rem;
   gap: 1.2rem;
   width: 100%;
   height: 100%;
@@ -111,10 +112,11 @@
 .description-img-container-content::before {
   content: '';
   position: absolute;
-  height: calc(100% - 8rem);
-  width: 0.75rem;
-  left: 1.2rem;
-  border-radius: 1rem;
+  height: 100%;
+  width: 1.5rem;
+  left: 0;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
   background-color: var(--cor-secundaria);
 }
 
@@ -127,7 +129,6 @@
 .button-container {
   display: flex;
   justify-content: center;
-  margin-top: -3rem;
   margin-bottom: 3rem;
 }
 
@@ -152,15 +153,18 @@
   align-items: center;
   background-color: var(--cor-primaria);
   color: rgb(255, 255, 255);
-  height: 100vh;
+  height: 85rem;
+  min-height: 80rem;
 }
 
 .card-container {
   display: flex;
   flex-direction: column;
-  padding: 0 5rem;
+  padding: 4rem 5rem;
   gap: 2rem;
-  width: 60vw;
+  width: 60%;
+  height: 100%;
+  justify-content: center;
 }
 
 .card-container-title {
@@ -221,7 +225,7 @@
 
 .side-img {
   display: flex;
-  width: 40vw;
+  width: 40%;
   height: 100%;
   position: relative;
 }
@@ -233,34 +237,45 @@
   border-bottom-left-radius: 3rem;
 }
 
-.side-img::before {
-  content: 'PARTICIPE';
+.side-phrase {
   position: absolute;
+  height: 100%;
+  width: 14rem;
+  top: 0;
+  right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
+  background-color: var(--cor-primaria);
+  font-size: 6.75rem;
   writing-mode: vertical-rl;
   text-orientation: upright;
-  color: white;
-  font-weight: bold;
-  letter-spacing: 2rem;
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(3rem, 5rem, 5rem);
-  background-color: var(--cor-primaria);
-  width: 12rem;
-  height: 100%;
-  right: 0;
+  font-weight: bold;
   padding-right: 0.5rem;
-  border-top-left-radius: 3rem;
-  border-bottom-left-radius: 3rem;
+  gap: 0.5rem;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  text-shadow: -0.6rem 0.4rem 0.2rem var(--cor-secundaria);
+}
+
+@keyframes textAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.side-phrase > span {
+  animation: textAnimation ease-in-out 4s infinite;
 }
 
 @media (max-width: 1800px) {
-  .main-content {
-    padding: 3rem 6rem;
-    height: 75vh;
-  }
-
   .call-to-action > h2 {
     margin-left: 37.5rem;
     font-size: 7rem;
@@ -279,8 +294,7 @@
 
 @media (max-width: 1600px) {
   .main-content {
-    padding: 0 4rem;
-    height: 70vh;
+    padding-top: 5rem;
   }
 
   .call-to-action > h2 {
@@ -305,8 +319,8 @@
 
 @media (max-width: 1400px) {
   .main-content {
-    padding: 0 4rem;
-    height: 70vh;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 
   .call-to-action > h2 {
@@ -323,22 +337,9 @@
     width: 45rem;
     height: 45rem;
   }
-
-  .description-img-container {
-    width: 23vw;
-    height: 24vh;
-  }
-
-  .description-img-container-content::before {
-    height: calc(100% - 4rem);
-  }
 }
 
 @media (max-width: 1300px) {
-  .highlights {
-    height: 80vh;
-  }
-
   .card-content > p {
     font-size: 1.4rem;
   }
@@ -356,17 +357,37 @@
     letter-spacing: 1.2rem;
     font-size: 4.5rem;
   }
+
+  .highlights {
+    height: 65rem;
+    min-height: 65rem;
+  }
+
+  .side-phrase {
+    font-size: 5rem;
+    gap: 0.5rem;
+    width: 10rem;
+  }
 }
 
 @media (max-width: 1200px) {
   .main-content {
-    height: 115vh;
-    padding: 1.5rem 7rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
   }
 
   .description {
     display: flex;
     flex-direction: row;
+    width: 100vw;
+  }
+
+  .main-content {
+    padding-bottom: 3rem;
+  }
+
+  .description-container {
+    margin-top: 6rem;
   }
 
   .call-to-action {
@@ -380,30 +401,34 @@
     width: 52rem;
   }
 
+  .img-container {
+    width: 34rem;
+  }
+
   .img-container > img {
     width: 41rem;
   }
 
   .button-container {
     justify-content: start;
-    padding-left: 7rem;
+    padding-left: 10rem;
   }
 
   .description-img-container {
-    width: 33vw;
-    height: 24vh;
+    width: 40%;
+    min-width: 30rem;
+    height: 27rem;
   }
 }
 
 @media (max-width: 1000px) {
-  .main-content {
-    height: 100vh;
-    padding: 1.5rem 3rem;
-  }
-
   .description {
     display: flex;
     flex-direction: row;
+  }
+
+  .description-container {
+    margin-top: 4rem;
   }
 
   .call-to-action {
@@ -421,25 +446,12 @@
     width: 30rem;
   }
 
-  .button-container {
-    padding-left: 3rem;
-  }
-
-  .description-img-container {
-    width: 40vw;
-    height: 25vh;
-  }
-
   .img-container {
     width: 30rem;
   }
 
   .card-container {
     padding: 0 2.5rem;
-  }
-
-  .highlights {
-    height: 67vh;
   }
 
   .card-content > p {
@@ -456,7 +468,7 @@
 
   .card-img > img {
     width: 17rem;
-    height: 10rem;
+    height: 11rem;
   }
 
   .side-img::before {
@@ -464,18 +476,45 @@
     font-size: 3.5rem;
     width: 8rem;
   }
+
+  .highlights {
+    height: 53rem;
+    min-height: 53rem;
+  }
+
+  .side-phrase {
+    font-size: 4rem;
+    width: 8rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .main-content {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .description-img-container {
+    width: 46%;
+  }
+
+  .button-container {
+    padding-left: 3rem;
+  }
 }
 
 @media (max-width: 768px) {
   .main-content {
-    padding: 0 3rem;
+    padding: 3rem;
     padding-top: 6rem;
-    height: 125vh;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 
   .call-to-action {
     width: 100%;
     height: 49rem;
+    margin-top: 5rem;
   }
 
   .call-to-action > h2 {
@@ -489,13 +528,8 @@
     display: none;
   }
 
-  .description-container {
-    margin-top: -22rem;
-  }
-
-  .description-img-container {
-    width: 44vw;
-    height: 27vh;
+  .description-img-container-content > p {
+    font-size: 2.2rem;
   }
 
   .description {
@@ -503,22 +537,22 @@
   }
 
   .button-container {
-    padding-left: 3rem;
+    padding-left: 4rem;
   }
 
   .highlights {
     flex-direction: column;
     height: auto;
-    padding: 0 1rem;
   }
 
   .card-container {
     margin: 5rem 0;
     width: 100%;
+    padding: 0 4rem;
   }
 
   .card-content > h2 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
 
   .card-content > p {
@@ -533,25 +567,37 @@
   .side-img {
     display: none;
   }
-}
 
-@media (max-width: 600px) {
-  .main-content {
-    padding: 0 3rem;
-    height: 148vh;
+  .description {
+    width: 100%;
   }
 
   .description-img-container {
     width: 100%;
-    height: 31vh;
+    height: 30rem;
+    max-height: 30rem;
+  }
+
+  .description-img-container-content {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-content {
+    padding-left: 3rem;
   }
 
   .call-to-action {
     height: 37rem;
   }
 
+  .description-img-container {
+    height: 25rem;
+  }
+
   .description-img-container-content > p {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .call-to-action > h2 {
@@ -559,22 +605,8 @@
     width: 100%;
   }
 
-  .description-container {
-    margin-top: -35rem;
-  }
-
-  .button-container {
-    margin-top: -6rem;
-  }
-
-  .card {
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-
   .card-content > p {
     font-size: 1.2rem;
-    width: 23rem;
   }
 
   .card-img > img {
@@ -585,12 +617,29 @@
   .card-content > h2 {
     font-size: 1.7rem;
   }
+
+  .button-container {
+    padding-left: 0;
+    justify-content: center;
+  }
+
+  .card-container {
+    padding: 0 3rem;
+  }
 }
 
 @media (max-width: 500px) {
   .card-img > img {
-    width: calc(100vw - 7rem);
-    height: 22rem;
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .card {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    width: 100%;
   }
 
   .card-content > h2 {
@@ -606,5 +655,10 @@
 
   .card:last-child > .card-content > p {
     border-bottom: 0 solid #fff;
+    padding-bottom: 0;
+  }
+
+  .card-container {
+    padding-right: 4rem;
   }
 }
