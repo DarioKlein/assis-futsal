@@ -1,0 +1,26 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  color: white;
+  height: 5rem;
+  padding: 1rem 3rem;
+  background-color: var(--cor-primaria);
+}
+
+.back-to-top-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3.5rem;
+  width: 3.5rem;
+  background-color: white;
+  border-radius: 1rem;
+}
+
+.back-to-top-btn > img {
+  display: block;
+  transform: scale(1.2);
+  transition: all 0.3s ease-in-out;
+}
