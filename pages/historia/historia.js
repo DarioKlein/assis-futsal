@@ -2,8 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const loadComponents = async () => {
     const elements = document.querySelectorAll("[data-include]");
 
-    const palavra = "PARTICIPE";
-
     for (const el of elements) {
       const file = el.getAttribute("data-include");
 
