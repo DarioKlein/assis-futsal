@@ -1,0 +1,36 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  color: white;
+  height: 5rem;
+  padding: 1rem 3rem;
+  background-color: var(--cor-primaria);
+}
+
+.back-to-top-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3.5rem;
+  width: 3.5rem;
+  background-color: white;
+  border-radius: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.back-to-top-btn:hover {
+  transform: skew(-10deg, 0deg);
+  box-shadow: 0.25rem 0.25rem 0 0.1rem var(--cor-secundaria);
+}
+
+.back-to-top-btn:hover > img {
+  transform: rotate(360deg) scale(1.5);
+}
+
+.back-to-top-btn > img {
+  display: inline-block;
+  border-radius: 1rem;
+  transition: all 0.45s ease-in-out;
+}

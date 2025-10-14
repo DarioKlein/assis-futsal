@@ -1,0 +1,109 @@
+@import url("../../css/global.css");
+@import url("../../components/navbar/navbar.css");
+@import url("../../components/footer/footer.css");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+.timeline {
+  margin-top: 6.5rem;
+  padding: 1rem 3.5rem;
+}
+
+.timeline-title {
+  display: flex;
+  align-items: center;
+  font-size: 3.5rem;
+  font-weight: 900;
+  position: relative;
+  margin-left: 1rem;
+  color: var(--cor-primaria);
+}
+
+.timeline-title::before {
+  content: "";
+  position: absolute;
+  height: 75%;
+  left: -1rem;
+  width: 0.35rem;
+  border-radius: 1rem;
+  background-color: var(--cor-primaria);
+}
+
+.timeline-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+}
+
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  max-width: 65%;
+  text-align: justify;
+  padding: 0 2.5rem;
+  position: relative;
+  font-size: 2rem;
+}
+
+.timeline-content > li > h3 {
+  position: relative;
+}
+
+.timeline-content > li:nth-of-type(2n - 1) > h3::before {
+  content: "";
+  position: absolute;
+  left: -3.85rem;
+  width: 3rem;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--cor-secundaria);
+}
+
+.timeline-content > li:nth-of-type(2n) > h3::before {
+  content: "";
+  position: absolute;
+  left: -3.85rem;
+  width: 3rem;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--cor-terciaria);
+}
+
+.timeline-content::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 0.35rem;
+  height: 100%;
+  background-color: var(--cor-primaria);
+}
+
+.img-container {
+  width: 35%;
+  position: relative;
+}
+
+.img-container::before {
+  content: "";
+  position: absolute;
+  width: 6rem;
+  height: 51.25%;
+  left: -2.5rem;
+  top: -0.725%;
+  transform: skew(-15deg, 0deg);
+  background-color: var(--cor-secundaria);
+  z-index: 1;
+}
+
+.img-container::after {
+  content: "";
+  position: absolute;
+  width: 6rem;
+  height: 51.25%;
+  left: -2.5rem;
+  bottom: -0.725%;
+  transform: skew(-15deg, 0deg);
+  background-color: var(--cor-terciaria);
+}
