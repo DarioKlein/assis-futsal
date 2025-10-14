@@ -1,15 +1,72 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../css/global.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
     <link rel="stylesheet" href="./historia.css" />
     <title>História</title>
   </head>
   <body>
-    <h1>História</h1>
-
+    <div
+      data-include="../../components/navbar/navbar.html"
+      data-script="../../components/navbar/navbar.js"
+    ></div>
+    <main>
+      <section class="timeline">
+        <h2 class="timeline-title">Linha do tempo</h2>
+        <div class="timeline-container">
+          <ul class="timeline-content">
+            <li>
+              <h3>2015 - Início como Vocem Futsal</h3>
+              <p>
+                O projeto começa como Vocem Futsal, voltado exclusivamente para
+                adultos, participando de competições estaduais e regionais.
+              </p>
+            </li>
+            <li>
+              <h3>2017 - Mudança para Assis Futsal</h3>
+              <p>
+                O projeto passa a se chamar Assis Futsal, mantendo a estrutura
+                da antiga Autarquia Municipal de Esportes, hoje Prefeitura
+                Municipal de Assis.
+              </p>
+            </li>
+            <li>
+              <h3>2018 - Estruturação Oficial</h3>
+              <p>
+                O Assis Futsal é oficialmente consolidado como projeto esportivo
+                municipal, com foco na categoria adulta e participação em
+                campeonatos como Liga Paulista, Copas de TV, Jogos Regionais e
+                Jogos Abertos.
+              </p>
+            </li>
+            <li>
+              <h3>2022 - Reestruturação Pós-Pandemia - Atual</h3>
+              <p>
+                O foco do projeto é redirecionado para as categorias de base:
+                Sub-16, Sub-18 e Sub-20. O objetivo passa a ser formar jovens
+                atletas para representar a cidade de Assis em competições
+                estaduais.
+              </p>
+            </li>
+          </ul>
+          <div class="img-container">
+            <img
+              width="500px"
+              src="../../assets/images/history-img.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+    <div
+      data-include="../../components/footer/footer.html"
+      data-script="../../components/footer/footer.js"
+    ></div>
     <script src="./historia.js"></script>
   </body>
 </html>
