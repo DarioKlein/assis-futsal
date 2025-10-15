@@ -222,6 +222,7 @@ ul > li > a:hover {
     position: fixed;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
     z-index: 10;
+    border-bottom: 0.1rem solid #fff;
   }
 
   .navbar-container {
