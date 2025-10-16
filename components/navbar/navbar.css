@@ -1,4 +1,4 @@
-@import url('../../css/global.css');
+@import url("../../css/global.css");
 
 .navbar-container {
   display: flex;
@@ -90,7 +90,7 @@ ul > li > a {
 }
 
 ul > li > a::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 50%;
   width: 0;
@@ -220,7 +220,8 @@ ul > li > a:hover {
     max-height: 6.5rem;
     min-width: 100vw;
     position: fixed;
-    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1),
+      0px 1px 2px 0px rgba(0, 0, 0, 0.06);
     z-index: 10;
     border-bottom: 0.1rem solid #fff;
   }

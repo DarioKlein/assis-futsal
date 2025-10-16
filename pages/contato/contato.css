@@ -219,28 +219,6 @@ hr {
   object-fit: cover;
 }
 
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-
 .coaches {
   display: flex;
   flex-direction: column;
@@ -337,22 +315,6 @@ textarea::placeholder {
   width: 1em;
   margin-right: 0.25rem;
 }
-
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
 
 @media (max-width: 768px) {
   .call-to-action {
