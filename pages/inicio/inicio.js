@@ -142,3 +142,9 @@ new Chart(ctx1, {
     },
   },
 })
+
+document.getElementById('button').addEventListener('click', () => {
+  document.getElementById('card-container-title').scrollIntoView({
+    behavior: 'smooth',
+  })
+})
