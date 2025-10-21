@@ -110,6 +110,18 @@ ul > li > a:hover {
   color: var(--cor-terciaria);
 }
 
+.navbar-focus {
+  color: var(--cor-terciaria);
+}
+
+.desktop-navbar .navbar-focus:hover {
+  color: var(--cor-primaria);
+}
+
+.navbar-focus:hover {
+  color: white;
+}
+
 @media (max-width: 1800px) {
   .logo > img {
     width: 150%;
