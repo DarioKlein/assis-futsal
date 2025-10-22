@@ -115,14 +115,6 @@ td {
   max-width: 120rem;
 }
 
-h1 {
-  text-align: center;
-  color: white;
-  margin-bottom: 2rem;
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  text-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.3);
-}
-
 .field-wrapper {
   background: var(--cor-terciaria);
   padding: 1.5rem;
