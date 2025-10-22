@@ -54,10 +54,11 @@
 
 .schedules {
   flex-direction: column;
-  padding: 4rem 2.5rem;
+  padding: 4rem;
   gap: 2.5rem;
   background-color: var(--cor-primaria);
   padding-bottom: 5.5rem;
+  padding-right: 5.3rem;
 }
 
 .cta-content {
@@ -159,25 +160,48 @@
 .s-contact-data {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  flex: 1 1 0;
+  gap: 2rem;
   height: 100%;
   color: white;
-  font-size: 2rem;
+  font-size: 2.3rem;
+  font-weight: 200;
 }
 
 .s-contact-data > p {
   display: flex;
   align-items: center;
   border-radius: 0.5rem;
+  gap: 1.4rem;
+}
+
+.s-contact-data > a {
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
   gap: 1rem;
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+.s-contact-data > a > p {
+  margin-top: -0.4rem;
+}
+
+.s-contact-data > a:hover {
+  color: var(--cor-secundaria);
+}
+
+.s-contact-data > a:hover > img {
+  opacity: 0.5;
+  transition: all 0.2s ease-in-out;
 }
 
 hr {
   background-color: white;
   border: none;
   border-radius: 1rem;
-  height: 0.25rem;
+  height: 0.2rem;
+  max-width: 65rem;
 }
 
 .s-card {
@@ -185,6 +209,7 @@ hr {
   flex-direction: column;
   justify-content: center;
   flex: 1 1 0;
+  min-height: 55rem;
   gap: 0.35rem;
 }
 
@@ -205,6 +230,7 @@ hr {
   aspect-ratio: 1 / 1;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+  max-height: 45rem;
 }
 
 .s-card-img > img {
@@ -219,79 +245,106 @@ hr {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-  flex: 1 1 0;
-  padding: 2.5rem;
+  padding: 4rem;
+  width: 55vw;
 }
 
 .coach {
   display: flex;
   flex-direction: column;
-  flex: 1 1 0;
   background-color: var(--cor-primaria);
   border: 0.15rem solid var(--cor-secundaria);
   color: white;
   border-radius: 0.5rem;
-  padding: 0.5rem;
   font-size: 2rem;
+  height: 23rem;
+  min-width: 50rem;
 }
 
 .coach h3,
 .coach p {
   display: flex;
   align-items: center;
+  gap: 1.3rem;
 }
 
 .coach-header {
   display: flex;
   flex-flow: row;
   justify-content: space-between;
-  flex: 1 1 0;
   border-bottom: 0.1rem solid var(--cor-secundaria);
+  padding: 0.7rem 1.4rem;
 }
 
 .coach-content {
   display: flex;
   flex-flow: row;
-  gap: 1rem;
-  padding-top: 0.5rem;
+  gap: 2.5rem;
+  height: 18.3rem;
 }
 
 .coach-img {
-  flex: 1 1 0;
+  width: 21rem;
+  height: 100%;
   border-radius: 0.5rem;
 }
 
 .coach-img > img {
-  width: 100%;
+  width: 15rem;
   height: 100%;
-  border-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
 }
 
 .coach-description {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  flex: 1 1 0;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.coach-description > h3 {
+  font-size: 2rem;
+}
+
+.coach-description > h3 > span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 form {
-  flex: 1 1 0;
+  width: 45%;
   display: flex;
   flex-flow: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
   border: none;
   background-color: var(--cor-secundaria);
   font-size: 2rem;
-  padding: 2.5rem;
+  padding: 5rem 4rem;
+  padding-right: 6rem;
 }
 
-input,
-textarea {
+fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  border: none;
+}
+
+fieldset > input,
+fieldset > textarea {
   padding: 1rem;
   border-radius: 0.5rem;
   background-color: white;
+  width: 100%;
+}
+
+textarea {
+  height: 35rem;
 }
 
 input::placeholder,
@@ -308,8 +361,7 @@ textarea::placeholder {
 }
 
 .icon {
-  width: 1em;
-  margin-right: 0.25rem;
+  width: 2.5rem;
 }
 
 @media (max-width: 1600px) {
@@ -342,6 +394,29 @@ textarea::placeholder {
   }
 }
 
+@media (max-width: 1400px) {
+  .s-contact-data {
+    font-size: 1.8rem;
+  }
+
+  .s-card-content {
+    font-size: 1.6rem;
+  }
+
+  .s-card {
+    min-height: 42rem;
+    min-width: 22rem;
+  }
+
+  .s-main-content {
+    gap: 2rem;
+  }
+
+  .s-cards-container {
+    gap: 1.2rem;
+  }
+}
+
 @media (max-width: 1200px) {
   .cta-content {
     font-size: 1.6rem;
@@ -371,6 +446,28 @@ textarea::placeholder {
 
   .cta-card {
     margin-top: 2.3rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .s-contact-data {
+    width: 100%;
+  }
+
+  .s-contact-data {
+    font-size: 2.2rem;
+  }
+
+  .s-card-content {
+    font-size: 2rem;
+  }
+
+  .s-main-content {
+    gap: 3.5rem;
+  }
+
+  .s-cards-container {
+    gap: 2.5rem;
   }
 }
 
@@ -408,5 +505,18 @@ textarea::placeholder {
 
   .cta-title {
     font-size: 3rem;
+  }
+
+  .s-contact-data {
+    font-size: 2rem;
+  }
+
+  .s-card-content {
+    font-size: 1.7rem;
+  }
+
+  .schedules {
+    padding: 4rem 3rem;
+    padding-right: 4rem;
   }
 }
