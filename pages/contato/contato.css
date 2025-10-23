@@ -1,7 +1,7 @@
-@import url('../../css/global.css');
-@import url('../../components/navbar/navbar.css');
-@import url('../../components/footer/footer.css');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("../../css/global.css");
+@import url("../../components/navbar/navbar.css");
+@import url("../../components/footer/footer.css");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 .cta-title,
 .s-title,
@@ -20,7 +20,7 @@
 .s-title::before,
 .c-title::before,
 .form-title::before {
-  content: '';
+  content: "";
   position: absolute;
   height: 75%;
   left: -1rem;
@@ -246,7 +246,8 @@ hr {
   flex-direction: column;
   gap: 2.5rem;
   padding: 4rem;
-  width: 55vw;
+  width: 150%;
+  min-width: 75rem;
 }
 
 .coach {
@@ -258,7 +259,7 @@ hr {
   border-radius: 0.5rem;
   font-size: 2rem;
   height: 23rem;
-  min-width: 50rem;
+  width: 100%;
 }
 
 .coach h3,
@@ -301,6 +302,8 @@ hr {
   justify-content: center;
   gap: 2rem;
   width: 100%;
+  overflow: hidden;
+  padding-right: 3rem;
 }
 
 .coach-description > h3 {
@@ -311,14 +314,15 @@ hr {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: 100%;
 }
 
 form {
-  width: 45%;
+  width: 100%;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: left;
   gap: 2rem;
   border: none;
   background-color: var(--cor-secundaria);
@@ -415,6 +419,10 @@ textarea::placeholder {
   .s-cards-container {
     gap: 1.2rem;
   }
+
+  .form-title {
+    font-size: 3rem;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -447,6 +455,15 @@ textarea::placeholder {
   .cta-card {
     margin-top: 2.3rem;
   }
+
+  .form-title {
+    font-size: 3rem;
+  }
+
+  .coaches {
+    width: auto;
+    min-width: 60rem;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -469,6 +486,10 @@ textarea::placeholder {
   .s-cards-container {
     gap: 2.5rem;
   }
+
+  .form-title {
+    font-size: 2.5rem;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -489,8 +510,25 @@ textarea::placeholder {
     display: none;
   }
 
-  .coach {
-    font-size: 1rem;
+  .forms {
+    flex-direction: column;
+  }
+
+  form {
+    align-items: center;
+  }
+
+  .form-title {
+    align-self: flex-start;
+  }
+
+  .form-btn {
+    width: 9rem;
+    text-align: center;
+  }
+
+  .coaches {
+    min-width: 100vw;
   }
 }
 
@@ -518,5 +556,36 @@ textarea::placeholder {
   .schedules {
     padding: 4rem 3rem;
     padding-right: 4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .coach {
+    font-size: 1.4rem;
+  }
+
+  .coaches {
+    padding: 4rem 2rem;
+  }
+
+  .coach-img > img {
+    height: 103%;
+  }
+
+  form {
+    padding: 4rem 2rem;
+    padding-right: 3.5rem;
+  }
+
+  .form-title {
+    font-size: 2.5rem;
+  }
+
+  .coach-description > p > span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    display: block;
   }
 }
