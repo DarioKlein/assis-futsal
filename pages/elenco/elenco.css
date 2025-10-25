@@ -1,23 +1,25 @@
-@import url("../../css/global.css");
-@import url("../../components/navbar/navbar.css");
-@import url("../../components/footer/footer.css");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('../../css/global.css');
+@import url('../../components/navbar/navbar.css');
+@import url('../../components/footer/footer.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 .lineup,
 .cast {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-  padding: 2.5rem;
+  padding: 0 8rem;
+  margin-top: 8rem;
 }
 
 .cast {
   background-color: var(--cor-primaria);
+  padding-top: 4.5rem;
+  padding-bottom: 6rem;
 }
 
 .lineup-content {
   display: flex;
-  flex-flow: row wrap;
   width: 100vw;
   gap: 2.5rem;
 }
@@ -35,7 +37,7 @@
 
 .lineup-title::before,
 .cast-title::before {
-  content: "";
+  content: '';
   position: absolute;
   height: 75%;
   left: -1rem;
@@ -53,9 +55,13 @@
 }
 
 .lineup-description {
-  font-size: 2rem;
-  flex: 1 1 0;
+  font-size: 2.6rem;
   color: var(--cor-primaria);
+  width: 65rem;
+}
+
+.lineup-description > div:last-of-type {
+  margin-top: 3rem;
 }
 
 .table-container {
@@ -108,11 +114,14 @@ td {
   font-weight: 200;
 }
 
+td > p {
+  width: 3.25rem;
+}
+
 /* Estilo do campo */
 .field-container {
-  flex: 2 1 0;
   width: 100%;
-  max-width: 120rem;
+  max-width: 140rem;
 }
 
 .field-wrapper {
@@ -256,25 +265,25 @@ td {
 }
 
 .corner-top-left {
-  top: -1.5%;
+  top: -3%;
   left: -1.5%;
   clip-path: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%);
 }
 
 .corner-top-right {
-  top: -1.5%;
+  top: -3%;
   right: -1.5%;
   clip-path: polygon(0 50%, 50% 50%, 50% 100%, 0 100%);
 }
 
 .corner-bottom-left {
-  bottom: -1.5%;
+  bottom: -3%;
   left: -1.5%;
   clip-path: polygon(50% 0, 100% 0, 100% 50%, 50% 50%);
 }
 
 .corner-bottom-right {
-  bottom: -1.5%;
+  bottom: -3%;
   right: -1.5%;
   clip-path: polygon(0 0, 50% 0, 50% 50%, 0 50%);
 }
@@ -373,9 +382,99 @@ td {
   box-shadow: 0 0 0 0.3rem rgba(16, 146, 215, 0.2);
 }
 
+@media (max-width: 1400px) {
+  .lineup-description {
+    font-size: 2rem;
+    width: 48rem;
+  }
+
+  .lineup-description > h2 {
+    font-size: 2.4rem;
+  }
+
+  .lineup-description > div:last-of-type {
+    margin-top: 1rem;
+  }
+
+  .lineup,
+  .cast {
+    padding: 0 5rem;
+  }
+
+  .cast {
+    margin-top: 4rem;
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .lineup-content {
+    flex-direction: column;
+    padding-right: 10rem;
+  }
+
+  .field-container {
+    max-width: 54rem;
+    padding-right: 1.5rem;
+  }
+
+  .lineup-description {
+    display: flex;
+    gap: 3rem;
+    margin-top: 1rem;
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .lineup-description > div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 50%;
+    min-width: 40rem;
+  }
+
+  .lineup-description > div > div {
+    display: flex;
+    gap: 0.5rem;
+    background-color: var(--cor-primaria);
+    color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .lineup-description > div > div > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .lineup-description > div > div > div > p {
+    height: 4rem;
+    background-color: #fff;
+    color: var(--cor-primaria);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lineup-description > div:last-of-type {
+    margin-top: 0;
+    border-left: 0.1rem solid var(--cor-primaria);
+    padding-left: 3rem;
+  }
+}
+
 @media (max-width: 768px) {
   .lineup {
-    margin-top: 6.5rem;
+    margin-top: 11rem;
+    padding: 0 3rem;
+  }
+
+  .lineup-content {
+    padding-right: 6.25rem;
   }
 
   .field-wrapper {
@@ -387,13 +486,56 @@ td {
     height: 4rem;
   }
 
+  .lineup-description h2 {
+    font-size: 2.3rem;
+  }
+
+  .lineup-description {
+    font-size: 1.6rem;
+  }
+
+  .lineup-description > div:first-of-type {
+    min-width: 37rem;
+  }
+
   .player-card {
     padding: 0.6rem 1rem;
+  }
+
+  .table-container {
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  .cast {
+    padding-left: 3rem;
+    padding-right: 4.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .lineup-description {
+    flex-direction: column;
+    padding-right: 1rem;
+  }
+
+  .lineup-description > div:first-of-type {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .lineup-description > div:last-of-type {
+    border-left: 0.3rem solid var(--cor-primaria);
+    border-radius: 1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .field-wrapper {
+  /* .field-wrapper {
     padding: 0.8rem;
   }
 
@@ -408,7 +550,49 @@ td {
 
   .controls {
     padding: 1.2rem;
+  } */
+
+  .field-wrapper {
+    transform: rotateZ(90deg);
+    margin: 20rem 0;
+    margin-bottom: 22.5rem;
+    margin-left: -19.5rem;
+    width: 79.2rem;
+  }
+
+  .player-card {
+    transform: rotateZ(270deg);
+  }
+
+  .player-card:hover {
+    transform: scale(1.1) rotateZ(270deg);
   }
 }
 
-/* Fim do estilo do campo */
+@media (max-width: 480px) {
+  .field-wrapper {
+    transform: rotateZ(90deg) translateY(49%);
+    margin: 20rem 0;
+    margin-bottom: 22.5rem;
+    width: 169vw;
+  }
+
+  .player-card {
+    transform: rotateZ(270deg);
+  }
+
+  .player-card:hover {
+    transform: scale(1.1) rotateZ(270deg);
+  }
+
+  .lineup-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 410px) {
+  .field-wrapper {
+    margin: 16rem 0;
+    margin-bottom: 18.5rem;
+  }
+}

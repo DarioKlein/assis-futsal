@@ -1,7 +1,7 @@
-@import url("../../css/global.css");
-@import url("../../components/navbar/navbar.css");
-@import url("../../components/footer/footer.css");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('../../css/global.css');
+@import url('../../components/navbar/navbar.css');
+@import url('../../components/footer/footer.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 .cta-title,
 .s-title,
@@ -20,7 +20,7 @@
 .s-title::before,
 .c-title::before,
 .form-title::before {
-  content: "";
+  content: '';
   position: absolute;
   height: 75%;
   left: -1rem;
@@ -322,13 +322,17 @@ form {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  align-items: left;
+  align-items: center;
   gap: 2rem;
   border: none;
   background-color: var(--cor-secundaria);
   font-size: 2rem;
   padding: 5rem 4rem;
   padding-right: 6rem;
+}
+
+.form-title {
+  align-self: flex-start;
 }
 
 fieldset {
@@ -362,6 +366,12 @@ textarea::placeholder {
   border-radius: 0.5rem;
   color: white;
   background-color: var(--cor-primaria);
+  transition: all 0.2s ease-in-out;
+}
+
+.form-btn:hover {
+  background-color: #fff;
+  color: var(--cor-primaria);
 }
 
 .icon {
@@ -514,14 +524,6 @@ textarea::placeholder {
     flex-direction: column;
   }
 
-  form {
-    align-items: center;
-  }
-
-  .form-title {
-    align-self: flex-start;
-  }
-
   .form-btn {
     width: 9rem;
     text-align: center;
@@ -557,6 +559,10 @@ textarea::placeholder {
     padding: 4rem 3rem;
     padding-right: 4rem;
   }
+
+  fieldset > textarea {
+    height: 25rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -564,8 +570,13 @@ textarea::placeholder {
     font-size: 1.4rem;
   }
 
+  .coach-description > h3 > span {
+    font-size: 1.6rem;
+  }
+
   .coaches {
     padding: 4rem 2rem;
+    padding-right: 3.5rem;
   }
 
   .coach-img > img {
@@ -574,7 +585,7 @@ textarea::placeholder {
 
   form {
     padding: 4rem 2rem;
-    padding-right: 3.5rem;
+    padding-right: 5.5rem;
   }
 
   .form-title {
