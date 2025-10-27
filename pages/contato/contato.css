@@ -321,7 +321,6 @@ form {
   width: 100%;
   display: flex;
   flex-flow: column;
-  justify-content: space-between;
   align-items: center;
   gap: 2rem;
   border: none;
@@ -376,6 +375,42 @@ textarea::placeholder {
 
 .icon {
   width: 2.5rem;
+}
+
+form > div {
+  width: 100%;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  margin: 1.4rem;
+}
+
+.feedback-active {
+  opacity: 1;
+}
+
+#feedback {
+  padding: 1rem 3rem;
+  border-radius: 0.5rem;
+  display: inline;
+  font-size: 1.6rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.feedback-sucess {
+  background-color: #48f87d;
+}
+
+.feedback-failed {
+  background-color: #e63946;
+  color: #fff;
+}
+
+.error {
+  border: 1px solid #e63946;
+}
+
+.error::placeholder {
+  color: #e63946;
 }
 
 @media (max-width: 1600px) {
@@ -598,5 +633,18 @@ textarea::placeholder {
     text-overflow: ellipsis;
     width: 100%;
     display: block;
+  }
+
+  form > div {
+    margin: 0;
+    margin-left: 2rem;
+    width: 105%;
+  }
+
+  #feedback {
+    display: block;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
