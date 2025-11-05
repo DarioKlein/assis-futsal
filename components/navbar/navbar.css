@@ -59,7 +59,7 @@ ul {
   height: 170%;
   object-fit: contain;
   margin-top: 4rem;
-  margin-right: 2rem;
+  margin-right: 2.5rem;
 }
 
 .slogan {
@@ -151,7 +151,7 @@ ul > li > a:hover {
   }
 
   .logo > img {
-    margin-right: 1.5rem;
+    margin-right: 2.2rem;
   }
 }
 
