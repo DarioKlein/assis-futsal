@@ -93,25 +93,30 @@ function validateForm() {
   return valid
 }
 
-async function postData(url = '', data = {}) {
+async function sendEmail(data) {
   try {
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
+    await emailjs.send(
+      'service_z0s7ywv',
+      'template_9suf03w',
+      {
+        name: data.name,
+        email: data.email,
+        message: `
+        Nome do Aluno: ${data.name}
+        E-mail do Aluno: ${data.email}
+        Número de Contato do Aluno: ${data.phone}
+        Mensagem do Aluno:
+        ${data.message}
+      `,
+        title: `Novo interessado - ${data.name}`,
       },
-      body: JSON.stringify(data),
-    })
+      'mcyQS2IOTA3k70QMg'
+    )
 
-    if (!response.ok) {
-      throw new Error(`Erro HTTP: ${response.status}`)
-    }
-
-    const result = await response.json()
-    feedbackMessage(result.message, true)
+    feedbackMessage('✅ Seu e-mail foi enviado com sucesso!', true)
   } catch (error) {
-    console.error('Erro na requisição:', error)
-    feedbackMessage('Erro: Seu e-mail não foi enviado!', false)
+    console.error('Erro ao enviar e-mail:', error)
+    feedbackMessage('❌ Erro: Seu e-mail não foi enviado!', false)
   }
 }
 
@@ -137,7 +142,7 @@ function feedbackMessage(message, status) {
   }
 }
 
-document.getElementById('submit').addEventListener('click', e => {
+document.getElementById('submit').addEventListener('click', async e => {
   e.preventDefault()
 
   if (validateForm()) {
@@ -145,16 +150,6 @@ document.getElementById('submit').addEventListener('click', e => {
     console.log(data)
     form.reset()
 
-    postData('http://localhost:8080/email', {
-      from: data.email,
-      subject: `Novo interessado em aulas de Futsal - ${data.name}`,
-      body: `
-        Nome do Aluno:${data.name}
-        E-mail do Aluno: ${data.email}
-        Número de Contato do Aluno: ${data.phone}
-        Mensagem do Aluno:
-        ${data.message}
-        `,
-    })
+    await sendEmail(data)
   }
 })
