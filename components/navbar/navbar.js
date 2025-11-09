@@ -1,10 +1,10 @@
-const title = document.querySelector("title").innerText.toLowerCase();
+const title = document.querySelector("title").textContent.toLowerCase();
 
 function setFocus() {
   document.querySelectorAll(".navigation-section > ul > li").forEach((li) => {
     const a = li.firstChild;
 
-    if (a.innerText.toLowerCase() === title) {
+    if (a.textContent.toLowerCase() === title) {
       a.classList.add("navbar-focus");
     }
   });
@@ -12,7 +12,7 @@ function setFocus() {
   document.querySelectorAll(".menu > ul > li").forEach((li) => {
     const a = li.firstChild;
 
-    if (a.innerHTML.toLowerCase() === title) {
+    if (a.textContent.toLowerCase() === title) {
       a.classList.add("navbar-focus");
     }
   });
