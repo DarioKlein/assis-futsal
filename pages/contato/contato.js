@@ -5,9 +5,8 @@ const coaches = [
   { name: "Carlos Matheus Pereira de Souza", birthDate: "08/06/1993" },
 ];
 
-currentYear = new Date().getFullYear();
-
 document.querySelectorAll(".age").forEach((element, i) => {
+  currentYear = new Date().getFullYear();
   const birthYear = coaches[i].birthDate.split("/")[2];
   const age = currentYear - birthYear;
 
@@ -104,22 +103,23 @@ async function sendEmail(data) {
 }
 
 function feedbackMessage(message, status) {
-  const feedback = document.getElementById("feedback");
-  const containerFeedback = document.querySelector("form > div");
+  const feedbackContainer = document.querySelector(".feedback-container");
+  const feedback = document.querySelector("#feedback-message");
+  unsetAnalyzing();
   if (status) {
     feedback.textContent = message;
-    containerFeedback.classList.add("feedback-active");
-    feedback.classList.add("feedback-sucess");
+    feedbackContainer.classList.add("feedback-active");
+    feedback.classList.add("feedback-success");
     setTimeout(() => {
-      containerFeedback.classList.remove("feedback-active");
-      feedback.classList.remove("feedback-sucess");
+      feedbackContainer.classList.remove("feedback-active");
+      feedback.classList.remove("feedback-success");
     }, 4000);
   } else {
     feedback.textContent = message;
-    containerFeedback.classList.add("feedback-active");
+    feedbackContainer.classList.add("feedback-active");
     feedback.classList.add("feedback-failed");
     setTimeout(() => {
-      containerFeedback.classList.remove("feedback-active");
+      feedbackContainer.classList.remove("feedback-active");
       feedback.classList.remove("feedback-failed");
     }, 4000);
   }
@@ -130,9 +130,37 @@ document.getElementById("submit").addEventListener("click", async (e) => {
 
   if (validateForm()) {
     const data = Object.fromEntries(new FormData(form).entries());
-    console.log(data);
+    document.querySelector(".form-title").scrollIntoView({
+      behavior: "smooth",
+    });
     form.reset();
+    setAnalyzing();
 
     await sendEmail(data);
   }
 });
+
+function setAnalyzing() {
+  const dots = [".", ".", "."];
+  const feedbackContainer = document.querySelector(".feedback-container");
+  const feedback = document.querySelector("#feedback-message");
+  feedbackContainer.classList.add("feedback-active");
+  feedback.classList.add("feedback-processing");
+  feedback.innerHTML = `<span class = "magnifier">🔍</span>Analisando`;
+  dots.forEach((dot, i) => {
+    const span = document.createElement("span");
+    span.textContent = dot;
+    span.style.animation = `1.5s jumping ease-in-out ${
+      i - 0.9 * i
+    }s infinite normal`;
+    feedback.appendChild(span);
+  });
+}
+
+function unsetAnalyzing() {
+  const feedbackContainer = document.querySelector(".feedback-container");
+  const feedback = document.querySelector("#feedback-message");
+  feedbackContainer.classList.remove("feedback-active");
+  feedback.classList.remove("feedback-processing");
+  feedback.innerHTML = "";
+}
