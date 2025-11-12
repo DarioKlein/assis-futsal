@@ -1,7 +1,7 @@
-@import url('../../css/global.css');
-@import url('../../components/navbar/navbar.css');
-@import url('../../components/footer/footer.css');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("../../css/global.css");
+@import url("../../components/navbar/navbar.css");
+@import url("../../components/footer/footer.css");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 .cta-title,
 .s-title,
@@ -20,7 +20,7 @@
 .s-title::before,
 .c-title::before,
 .form-title::before {
-  content: '';
+  content: "";
   position: absolute;
   height: 75%;
   left: -1rem;
@@ -32,6 +32,10 @@
 .s-title,
 .form-title {
   color: white;
+}
+
+.form-title {
+  scroll-margin-top: 5rem;
 }
 
 .s-title::before,
@@ -377,18 +381,14 @@ textarea::placeholder {
   width: 2.5rem;
 }
 
-form > div {
+.feedback-container {
   width: 100%;
   opacity: 0;
   transition: all 0.3s ease-in-out;
   margin: 1.4rem;
 }
 
-.feedback-active {
-  opacity: 1;
-}
-
-#feedback {
+#feedback-message {
   padding: 1rem 3rem;
   border-radius: 0.5rem;
   display: inline;
@@ -396,12 +396,25 @@ form > div {
   transition: all 0.3s ease-in-out;
 }
 
-.feedback-sucess {
+#feedback-message > span {
+  display: inline-block;
+}
+
+.feedback-active {
+  opacity: 1;
+}
+
+.feedback-success {
   background-color: #48f87d;
 }
 
 .feedback-failed {
   background-color: #e63946;
+  color: #fff;
+}
+
+.feedback-processing {
+  background-color: var(--cor-primaria);
   color: #fff;
 }
 
@@ -411,6 +424,44 @@ form > div {
 
 .error::placeholder {
   color: #e63946;
+}
+
+.magnifier {
+  display: inline-block;
+  animation: 1.5s analyzing linear 0s infinite normal;
+}
+
+@keyframes analyzing {
+  0% {
+    transform: translateX(-0.2rem);
+  }
+  25% {
+    transform: translateX(-0.1rem) translateY(-0.1rem);
+  }
+  50% {
+    transform: translateX(0.1rem) translateY(0rem);
+  }
+  75% {
+    transform: translateX(0rem) translateY(0.1rem);
+  }
+  100% {
+    transform: translateX(-0.2rem);
+  }
+}
+
+@keyframes jumping {
+  0% {
+    transform: translate(0) scale(1);
+  }
+  25% {
+    transform: translate(0, -0.25rem) scale(1.25);
+  }
+  66% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
 }
 
 @media (max-width: 1600px) {
@@ -598,6 +649,10 @@ form > div {
   fieldset > textarea {
     height: 25rem;
   }
+
+  .form-title {
+    scroll-margin-top: calc(5rem + 6.5rem);
+  }
 }
 
 @media (max-width: 600px) {
@@ -641,7 +696,7 @@ form > div {
     width: 105%;
   }
 
-  #feedback {
+  #feedback-message {
     display: block;
     text-align: center;
     padding-left: 0;
