@@ -80,10 +80,10 @@ new Chart(ctx1, {
     labels: posicaoPrincipalLabels,
     datasets: [
       {
-        label: "% de crescimento",
+        label: "qtde de alunos",
         data: posicaoPrincialData,
         borderColor: "#1092d7",
-        backgroundColor: "#1092d733",
+        backgroundColor: "#1091d7",
         tension: 0,
       },
     ],
@@ -94,7 +94,7 @@ new Chart(ctx1, {
     plugins: {
       title: {
         display: true,
-        text: "Histórico de Crescimento",
+        text: "Jogadores por Posição",
         font: { size: 26 },
         color: "#1c4c83",
         align: "center",
@@ -112,7 +112,7 @@ new Chart(ctx1, {
 
         title: {
           display: true,
-          text: "(%)",
+          text: "quantidade",
           color: "#1c4c83",
         },
         ticks: {
