@@ -121,8 +121,9 @@ td {
   font-weight: 200;
 }
 
-td > p {
-  width: 3.25rem;
+.player-positon {
+  width: 9rem;
+  text-align: center;
 }
 
 /* Estilo do campo */
