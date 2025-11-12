@@ -45,3 +45,9 @@ button {
 main {
   width: 100vw;
 }
+
+@media (max-width: 768px) {
+  #start {
+    scroll-margin-top: 6.5rem;
+  }
+}
