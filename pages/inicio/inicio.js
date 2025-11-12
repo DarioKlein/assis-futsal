@@ -6,20 +6,43 @@ const sidePhrase = document.querySelector(".side-phrase");
 });
 
 const ctx = document.getElementById("myGraph");
-const data = [45, 35, 20];
-const porcentagens = data.map((n) => {
-  return ((n / data.reduce((ac, val) => (ac += val))) * 100).toFixed(0);
+const faixaEtariaData = [2, 3, 11, 6, 8, 3, 7];
+const posicaoPrincialData = [8, 3, 6, 9, 6, 8];
+
+console.log(posicaoPrincialData.length);
+
+const faixaEtariaLabels = ["14", "15", "16", "17", "18", "19", "20"];
+const posicaoPrincipalLabels = [
+  "Ala",
+  "Ala Direita",
+  "Fixo",
+  "Goleiro",
+  "Pivô",
+];
+
+const faixaEtariaPorcentagens = faixaEtariaData.map((n) => {
+  return (n / 40) * 100;
 });
+
+const cores = [
+  "#1c4c83",
+  "#1092d7",
+  "#f0d067",
+  "#ff7b00ff",
+  "#479f34",
+  "#1d4713",
+  "#00ffe1ff",
+];
 
 new Chart(ctx, {
   type: "pie",
   data: {
-    labels: ["7 - 10 Anos", "11 - 14 Anos", "15 - 18 anos"],
+    labels: faixaEtariaLabels,
     datasets: [
       {
-        data: porcentagens,
-        label: "%",
-        backgroundColor: ["#f0d067", "#1092d7", "#1c4c83"],
+        data: faixaEtariaPorcentagens,
+        label: "% de alunos",
+        backgroundColor: cores,
         borderWidth: 0,
       },
     ],
@@ -51,18 +74,17 @@ new Chart(ctx, {
 const ctx1 = document.getElementById("myGraph1");
 
 new Chart(ctx1, {
-  type: "line",
+  type: "bar",
 
   data: {
-    labels: ["2021", "2022", "2023", "2024", "2025"],
+    labels: posicaoPrincipalLabels,
     datasets: [
       {
         label: "% de crescimento",
-        data: [18, 34, 39, 42, 50],
+        data: posicaoPrincialData,
         borderColor: "#1092d7",
         backgroundColor: "#1092d733",
         tension: 0,
-        // fill: true,
       },
     ],
   },

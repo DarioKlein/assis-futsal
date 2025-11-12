@@ -1,14 +1,24 @@
 const form = document.querySelector("form");
 const coaches = [
-  { name: "Neto", birthDate: "06/05/1980" },
-  { name: "Eduardo de Lima", birthDate: "29/08/1981" },
-  { name: "Carlos Matheus Pereira de Souza", birthDate: "08/06/1993" },
+  { name: "Neto", birthDate: new Date("1980-05-06") },
+  { name: "Eduardo de Lima", birthDate: new Date("1981-08-29") },
+  {
+    name: "Carlos Matheus Pereira de Souza",
+    birthDate: new Date("1993-06-08"),
+  },
 ];
 
 document.querySelectorAll(".age").forEach((element, i) => {
-  currentYear = new Date().getFullYear();
-  const birthYear = coaches[i].birthDate.split("/")[2];
-  const age = currentYear - birthYear;
+  const today = new Date();
+  let age = today.getFullYear() - coaches[i].birthDate.getFullYear();
+  const month = today.getMonth() - coaches[i].birthDate.getMonth();
+
+  if (
+    month < 0 ||
+    (month === 0 && today.getDate() < coaches[i].birthDate.getDate())
+  ) {
+    age--;
+  }
 
   element.textContent = `${age} anos`;
 });
