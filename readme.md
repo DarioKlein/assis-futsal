@@ -23,7 +23,9 @@
 
 ---
 
-![Jogador do Assis Futsal em destaque](assets/images/jogador-inicio.webp)
+<p align="center">
+  <img src="assets/images/jogador-inicio.webp" alt="Jogador do Assis Futsal em destaque" width="700">
+</p>
 
 ## 📍 Sobre o projeto
 
